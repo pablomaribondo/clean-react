@@ -18,7 +18,6 @@
     "strict": true /* Enable all strict type-checking options. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
     "resolveJsonModule": true,
-    "isolatedModules": true /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */,
     "noEmit": true /* Do not emit outputs. */
   },
   "include": ["src"]
