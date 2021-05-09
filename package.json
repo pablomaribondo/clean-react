@@ -5,7 +5,10 @@
   "author": "Pablo Maribondo <pablomgvieira@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "npx jest"
+    "test": "npx jest --passWithNoTests",
+    "test:watch": "yarn test -- --watch ",
+    "test:staged": "yarb test -- --findRelatedTests",
+    "test:ci": "yarn test -- --coveraged"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
