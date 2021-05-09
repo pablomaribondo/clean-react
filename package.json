@@ -7,7 +7,7 @@
   "scripts": {
     "test": "npx jest --passWithNoTests",
     "test:watch": "yarn test -- --watch ",
-    "test:staged": "yarb test -- --findRelatedTests",
+    "test:staged": "yarn test -- --findRelatedTests",
     "test:ci": "yarn test -- --coveraged",
     "prepare": "husky install"
   },
