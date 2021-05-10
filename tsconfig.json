@@ -12,6 +12,9 @@
     "jsx": "react" /* Specify JSX code generation: 'preserve', 'react-native', 'react', 'react-jsx' or 'react-jsxdev'. */,
     "rootDir": "src" /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */,
     "baseUrl": "src" /* Base directory to resolve non-absolute module names. */,
+    "paths": {
+      "@/*": ["*"]
+    },
     "allowJs": true /* Allow javascript files to be compiled. */,
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "allowSyntheticDefaultImports": true /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */,
