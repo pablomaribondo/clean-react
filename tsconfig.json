@@ -18,7 +18,6 @@
     "allowJs": true /* Allow javascript files to be compiled. */,
     "skipLibCheck": true /* Skip type checking of declaration files. */,
     "allowSyntheticDefaultImports": true /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */,
-    "strict": true /* Enable all strict type-checking options. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
     "resolveJsonModule": true,
     "noEmit": true /* Do not emit outputs. */
