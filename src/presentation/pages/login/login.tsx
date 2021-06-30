@@ -1,4 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, {
+  useState,
+  useEffect,
+  FormEvent,
+  FormHTMLAttributes
+} from 'react'
 
 import Styles from './login-styles.scss'
 import {
@@ -38,11 +43,17 @@ const Login: React.FC<Props> = ({ validation }: Props) => {
     }))
   }, [formState.password])
 
+  const submitHandler = (event: FormEvent<HTMLFormElement>): void => {
+    event.preventDefault()
+
+    setFormState((prevState) => ({ ...prevState, isLoading: true }))
+  }
+
   return (
     <div className={Styles.login}>
       <Header />
       <Context.Provider value={{ formState, setFormState }}>
-        <form className={Styles.form}>
+        <form className={Styles.form} onSubmit={submitHandler}>
           <h2>Login</h2>
           <Input type="email" name="email" placeholder="Digite seu e-mail" />
           <Input
