@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  FormEvent,
-  FormHTMLAttributes
-} from 'react'
+import React, { useState, useEffect, FormEvent } from 'react'
 
 import Styles from './login-styles.scss'
 import {
@@ -14,12 +9,14 @@ import {
 } from '@/presentation/components'
 import Context from '@/presentation/contexts/form/form-context'
 import { Validation } from '@/presentation/protocols/validation'
+import { Authentication } from '@/domain/usecases'
 
 type Props = {
   validation: Validation
+  authentication: Authentication
 };
 
-const Login: React.FC<Props> = ({ validation }: Props) => {
+const Login: React.FC<Props> = ({ validation, authentication }: Props) => {
   const [formState, setFormState] = useState({
     isLoading: false,
     mainError: '',
@@ -43,10 +40,16 @@ const Login: React.FC<Props> = ({ validation }: Props) => {
     }))
   }, [formState.password])
 
-  const submitHandler = (event: FormEvent<HTMLFormElement>): void => {
+  const submitHandler = async (
+    event: FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     event.preventDefault()
 
     setFormState((prevState) => ({ ...prevState, isLoading: true }))
+    await authentication.auth({
+      email: formState.email,
+      password: formState.password
+    })
   }
 
   return (
