@@ -45,6 +45,10 @@ const Login: React.FC<Props> = ({ validation, authentication }: Props) => {
   ): Promise<void> => {
     event.preventDefault()
 
+    if (formState.isLoading) {
+      return
+    }
+
     setFormState((prevState) => ({ ...prevState, isLoading: true }))
     await authentication.auth({
       email: formState.email,
