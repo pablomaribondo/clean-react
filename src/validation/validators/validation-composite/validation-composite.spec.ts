@@ -1,6 +1,6 @@
 import faker from 'faker'
 
-import { FieldValidationSpy } from '@/validation/test/mock-field-validation'
+import { FieldValidationSpy } from '@/validation/validators/test/mock-field-validation'
 import { ValidationComposite } from './validation-composite'
 
 type SutTypes = {
